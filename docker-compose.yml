@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:4.4.6
+    container_name: password-manager-mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+  backend:
+    build:
+      context: ./backend
+    container_name: password-manager-backend
+    ports:
+      - "3000:3000"
+    environment:
+      - MONGO_URI=mongodb://password-manager-mongodb:27017/CipherNest
+    depends_on:
+      - mongodb
+
+  frontend:
+    build:
+      context: .
+    container_name: password-manager-frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+    environment:
+      - REACT_APP_BACKEND_URL=http://localhost:3000
+
+volumes:
+  mongo-data:
