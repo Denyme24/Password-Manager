@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -22,15 +23,20 @@ const Navbar = () => {
             </a>
           </li>
         </ul> */}
-
-        <button className="text-white bg-amber-500 my-4 mx-2 rounded-full flex  justify-between items-center ring-white ring-1">
-          <img
-            className="invert  w-10 p-1 py-0"
-            src="/github.svg"
-            alt="github logo"
-          />
-          <span className="font-bold px-2">GitHub</span>
-        </button>
+        <a
+          href="https://github.com/Denyme24/Password-Manager"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <button className="text-white bg-amber-500 my-4 mx-2 rounded-full flex justify-between items-center ring-white ring-1">
+            <img
+              className="invert w-10 p-1 py-0"
+              src="/github.svg"
+              alt="github logo"
+            />
+            <span className="font-bold px-2">GitHub</span>
+          </button>
+        </a>
       </div>
     </nav>
   );

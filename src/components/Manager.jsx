@@ -44,14 +44,14 @@ const Manager = () => {
       form.uname.length > 3 &&
       form.password.length > 3
     ) {
-      if (form.id) {
-        await fetch(`http://localhost:3000/${form.id}`, {
-          method: "DELETE",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
-      }
+      // if (form.id) {
+      //   await fetch(`http://localhost:3000/${form.id}`, {
+      //     method: "DELETE",
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //     },
+      //   });
+      // }
       setpasswordArray([...passwordArray, { ...form, id: uuidv4() }]);
 
       let res = await fetch("http://localhost:3000", {
@@ -67,6 +67,7 @@ const Manager = () => {
     } else {
       toast("Error : Password not Saved !");
     }
+    console.log(form);
   };
 
   const deletePassword = async (id) => {
