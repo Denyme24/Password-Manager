@@ -13,7 +13,7 @@ This repository contains the Docker images and configuration files for a passwor
 ## Prerequisites
 
 - **Docker**: Ensure Docker is installed on your machine.
-- **Docker Compose**: Ensure Docker Compose is installed on your machine.
+
 
 ## Installing Docker and Docker Compose on Windows
 
